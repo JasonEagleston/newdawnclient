@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "melonjs": "^17.4.0"
+  },
+  "name": "infinity-client",
+  "version": "1.0.0",
+  "description": "Client for Infinity server.",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jason Eagleston",
+  "license": "MIT"
+}
