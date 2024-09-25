@@ -3,15 +3,43 @@
 <head>
 	<title>Infinity Client</title>
 	<meta id="viewport" name = "viewport" content = "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<style>
+		#screen {
+			position: relative;
+		}
+		.ui {
+			position: absolute;
+			visibility: hidden;
+			z-index: 2;
+		}
+		#login {
+			width: 240px;
+			height: 160px;
+			top: 80px;
+			left: 80px;
+			border: solid orange;
+			background-color: #222;
+		}
+	</style>
 </head>
 <body>
-	<div id = "screen"></div>
+	<div id = "screen">
+		<div class = "ui" id = "login">
+				<form id = "login_form">
+					<input type = "text" id = "username" placeholder = "Username" />
+					<input type = "password" id = "password" placeholder = "Password" />
+					<input type = "submit" value = "Submit" />
+				</form>
+		</div>
+	</div>
 	<script type = "module">
-		import * as melonjs from "./node_modules/melonjs/dist/melonjs.module.js";
-		import onload from "./js/index.mjs";
+		let n = 0;
+		import * as me from "/melon.js";
+		import * as socket from "/socket.io.min.js";
+		import onload from "/js/index.mjs";
 
-		melonjs.device.onReady(() => {
-			onload(melonjs);
+		me.device.onReady(() => {
+			onload(me, socket);
 		});
 
 
