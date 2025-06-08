@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://gisfouqmaovo"]
+
+[ext_resource type="Script" uid="uid://dbni1k2h6a12j" path="res://scenes/main_menu.gd" id="1_l6cm7"]
+
+[node name="GameState" type="Node2D"]
+script = ExtResource("1_l6cm7")
