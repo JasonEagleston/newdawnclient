@@ -14,7 +14,7 @@ func try_connect(url):
 	if err != OK:
 		print("Unable to connect.")
 func connected():
-	pass
+	add_child(preload("res://scenes/demo.tscn").instantiate())
 func _ready():
 	try_connect(websocket_url)
 
@@ -47,13 +47,10 @@ func _process(dt):
 	socket.poll()
 	var sockstate = socket.get_ready_state()
 	if is_connecting:
-		if sockstate != WebSocketPeer.STATE_OPEN:
+		if sockstate == WebSocketPeer.STATE_OPEN:
 			print("Connected!")
 			is_connecting = false
 			connected()
-		elif sockstate == WebSocketPeer.STATE_CONNECTING:
-			print("Failed to connect.")
-			is_connecting = false
 	if sockstate == WebSocketPeer.STATE_OPEN:
 		while socket.get_available_packet_count():
 			var data = socket.get_packet()

@@ -1,0 +1,30 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "",
+    "expandedProjectPaths": [
+    ],
+    "fileStates": {
+        "tiles.tsx": {
+            "scaleInEditor": 1.5
+        }
+    },
+    "frame.defaultDuration": 500,
+    "last.exportedFilePath": "/home/jason/NewDawnClient/tiled",
+    "last.imagePath": "/home/jason/NewDawnClient/sprites",
+    "lastUsedTilesetExportFilter": "All Files (*)",
+    "map.height": 30,
+    "map.lastUsedExportFilter": "Godot 4 Scene files (*.tscn)",
+    "map.lastUsedFormat": "tmx",
+    "map.width": 50,
+    "openFiles": [
+    ],
+    "project": "demo.tiled-project",
+    "property.type": "int",
+    "recentFiles": [
+        "tiles.tsx"
+    ],
+    "tileset.lastUsedFormat": "tsx"
+}

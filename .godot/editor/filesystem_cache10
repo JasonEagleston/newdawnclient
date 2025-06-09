@@ -1,0 +1,14 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1749479859
+icon.svg::CompressedTexture2D::8229383112818369923::1749426820::1749479859::1::::<><><>0<>0<>7f2ca1cb80711531d4b280cd3e1d76d2<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+::res://atlas/::1749479859
+bigobjects.png::CompressedTexture2D::8649376942357464707::1749479301::1749479859::1::::<><><>0<>0<>9e4e17b0e1707f176094ac7eb8197354<>res://.godot/imported/bigobjects.png-b7ea6d55e622b2e958af9a245605d3d4.ctex::
+::res://attributions/::1749478347
+lpctileatlas.txt::TextFile::-1::1352752035::0::1::::<><><>0<>0<><>::
+::res://scenes/::1749480169
+main_menu.gd::GDScript::7256820539406497687::1749426820::0::1::::<>Node2D<><>0<>0<><>::
+main_menu.tscn::PackedScene::438750685666003408::1749480169::0::1::::<><><>0<>0<><>::uid://dbni1k2h6a12j::::res://scenes/main_menu.gd<>uid://cne14tggjihdg::::res://sprites/tiles.png
+::res://sprites/::1749479859
+tiles.png::CompressedTexture2D::5695185283029473688::1749479294::1749479859::1::::<><><>0<>0<>ca3f0654e6ee305bb364fc98ccdb5300<>res://.godot/imported/tiles.png-f29defd6e309a9af15cb61d2b28e9181.ctex::
+::res://tiled/::1749480247
+demo.tscn::PackedScene::514619567188303514::1749480247::0::1::::<><><>0<>0<><>::uid://cne14tggjihdg::::res://sprites/tiles.png
