@@ -22,6 +22,7 @@ enum PacketType {
 	LOGIN = 1,
 	LOGOUT = 2,
 	RACES = 3,
+	MAPS = 4,
 }
 
 func get_string(buf: PackedByteArray, pos: int, multi: bool) -> String:
@@ -37,6 +38,17 @@ func get_string(buf: PackedByteArray, pos: int, multi: bool) -> String:
 	var size = buf[pos]
 	var s = buf.slice(pos + 1, pos + 1 + size).get_string_from_utf8()
 	return s
+func load_maps(buf: PackedByteArray, pos: int):
+	# [STRING LENGTH, STRING, MAP SIZE u16, [TILE_ID u16...MAP_SIZE], REPEAT?]
+	var map_name = get_string(buf, pos, false)
+	pos += 1 + buf[pos]
+	var map_size = buf.decode_u16(pos)
+	pos += 2
+	for i in map_size:
+		var tile_id = buf.decode_u16(pos)
+		pos += 2
+	if pos != buf.size():
+		load_maps(buf, pos)
 
 func add_client(data: PackedByteArray):
 	self.clients.append(data.decode_u64(1))
@@ -60,3 +72,9 @@ func _process(dt):
 				add_client(data)
 			elif ptype == PacketType.LOGOUT:
 				remove_client(data)
+			elif ptype == PacketType.RACES:
+				print("RACES")
+			elif ptype == PacketType.MAPS:
+				load_maps(data, 1)
+				
+				
