@@ -75,9 +75,35 @@ func sync_clients(data: PackedByteArray):
 		print("CLIENT: ", client_id)
 		clients.append(client_id)
 		pos += 8
+		
+func send_move_vec():
+	var data: PackedByteArray = [PacketType.CLIENT_MOVE_REQUEST, move_vec.x && 0xFF, move_vec.y && 0xFF]
+	socket.send(data)
+		
+var move_vec: Vector2i
+var old_move_vec: Vector2i
 	
 func _process(dt):
 	socket.poll()
+	
+	if Input.is_action_pressed("DOWN") and Input.is_action_pressed("UP"):
+		move_vec.y = 0
+	elif Input.is_action_pressed("DOWN"):
+		move_vec.y = 1
+	elif Input.is_action_pressed("UP"):
+		move_vec.y = -1
+	else:
+		move_vec.y = 0
+
+	if Input.is_action_pressed("LEFT") and Input.is_action_pressed("RIGHT"):
+		move_vec.x = 0
+	elif Input.is_action_pressed("LEFT"):
+		move_vec.x = -1
+	elif Input.is_action_pressed("RIGHT"):
+		move_vec.x = 1
+	else:
+		move_vec.x = 0
+
 	var sockstate = socket.get_ready_state()
 	if is_connecting:
 		if sockstate == WebSocketPeer.STATE_OPEN:
@@ -103,5 +129,8 @@ func _process(dt):
 				pass
 			elif ptype == PacketType.UPDATE_CLIENT_POSITION:
 				pass
+	
+	if move_vec != old_move_vec:
+		send_move_vec()
 				
-				
+	old_move_vec = move_vec
