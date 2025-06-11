@@ -23,14 +23,20 @@ enum PacketType {
 	LOGOUT = 2,
 	RACES = 3,
 	MAPS = 4,
+	CLIENT_SYNC = 5,
+	CLIENT_MOVE_REQUEST = 6,
+	UPDATE_CLIENT_POSITION = 7,
 }
 func get_string_mult(buf: PackedByteArray, pos: int) -> Array:
 	var strl = buf[pos]
-	pos
 	var strings = []
-	while pos < buf.size():
+	while true:
 		strings.append(get_string(buf, pos))
 		pos += strl + 1
+		if pos != buf.size():
+			strl = buf[pos]
+			continue
+		break
 	return strings
 
 func get_string(buf: PackedByteArray, pos: int) -> String:
@@ -61,6 +67,14 @@ func add_client(data: PackedByteArray):
 	self.clients.append(data.decode_u64(1))
 func remove_client(data: PackedByteArray):
 	self.clients.remove_at(self.clients.find(data.decode_u64(1)))
+func sync_clients(data: PackedByteArray):
+	var pos = 1
+	while pos < data.size():
+		print("POS", pos, data.size())
+		var client_id = data.decode_u64(pos)
+		print("CLIENT: ", client_id)
+		clients.append(client_id)
+		pos += 8
 	
 func _process(dt):
 	socket.poll()
@@ -81,8 +95,13 @@ func _process(dt):
 				remove_client(data)
 			elif ptype == PacketType.RACES:
 				get_races(data)	
-				print("RACES")
 			elif ptype == PacketType.MAPS:
 				load_maps(data, 1)
+			elif ptype == PacketType.CLIENT_SYNC:
+				sync_clients(data)
+			elif ptype == PacketType.CLIENT_MOVE_REQUEST:
+				pass
+			elif ptype == PacketType.UPDATE_CLIENT_POSITION:
+				pass
 				
 				
