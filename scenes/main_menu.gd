@@ -70,11 +70,28 @@ func load_maps(buf: PackedByteArray, pos: int):
 		load_maps(buf, pos)
 
 func get_races(buf: PackedByteArray):
-	# [RACE LIST LENGTH, STRING LENGTH, RACE NAME STRING, REPEAT?]
+	# [RACE LIST LENGTH, STRING LENGTH, RACE NAME STRING, STR, DUR, FRC, SPD, RECV, REPEAT?]
 	var len = buf[1]
-	var available_races = []
-	for s in get_string_mult(buf, 2):
-		available_races.append(s)
+	var available_races = {}
+	var size = buf[2]
+	var pos = 2
+	for i in len:
+		var race_name = get_string(buf, pos)
+		available_races[race_name] = {}
+		available_races.sort()
+		pos += size + 1
+		available_races[race_name].stats = {
+			"strength" = buf.decode_float(pos),
+			"durability" = buf.decode_float(pos + 4),
+			"force" = buf.decode_float(pos + 8),
+			"speed" = buf.decode_float(pos + 12),
+			"recovery" = buf.decode_float(pos + 16)
+		}
+		pos += 20
+		if pos >= buf.size():
+			continue
+		size = buf[pos]
+		
 	$CreationMenu.set_races(available_races)
 	
 

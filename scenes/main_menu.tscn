@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://gisfouqmaovo"]
 
 [ext_resource type="Script" uid="uid://dbni1k2h6a12j" path="res://scenes/main_menu.gd" id="1_l6cm7"]
-[ext_resource type="PackedScene" uid="uid://cynsev811qv88" path="res://scenes/creation_menu.tscn" id="2_ekxnf"]
+[ext_resource type="PackedScene" uid="uid://dge8uqkssmwoj" path="res://scenes/race_window.tscn" id="2_ekxnf"]
 
 [node name="GameState" type="Node2D"]
 script = ExtResource("1_l6cm7")
