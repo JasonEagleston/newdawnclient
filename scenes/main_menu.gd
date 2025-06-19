@@ -78,20 +78,21 @@ func get_races(buf: PackedByteArray):
 	for i in len:
 		var race_name = get_string(buf, pos)
 		available_races[race_name] = {}
-		available_races.sort()
 		pos += size + 1
 		available_races[race_name].stats = {
-			"strength" = buf.decode_float(pos),
-			"durability" = buf.decode_float(pos + 4),
-			"force" = buf.decode_float(pos + 8),
-			"speed" = buf.decode_float(pos + 12),
-			"recovery" = buf.decode_float(pos + 16)
+			"points" = buf.decode_u8(pos),
+			"strength" = buf.decode_float(pos + 1),
+			"durability" = buf.decode_float(pos + 5),
+			"force" = buf.decode_float(pos + 9),
+			"resistance" = buf.decode_float(pos + 13),
+			"speed" = buf.decode_float(pos + 17),
+			"recovery" = buf.decode_float(pos + 21),
+			"energy" = buf.decode_float(pos + 25),
 		}
-		pos += 20
+		pos += 29
 		if pos >= buf.size():
 			continue
 		size = buf[pos]
-		
 	$CreationMenu.set_races(available_races)
 	
 
