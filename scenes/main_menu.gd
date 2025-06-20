@@ -79,17 +79,22 @@ func get_races(buf: PackedByteArray):
 		var race_name = get_string(buf, pos)
 		available_races[race_name] = {}
 		pos += size + 1
-		available_races[race_name].stats = {
-			"points" = buf.decode_u8(pos),
-			"strength" = buf.decode_float(pos + 1),
-			"durability" = buf.decode_float(pos + 5),
-			"force" = buf.decode_float(pos + 9),
-			"resistance" = buf.decode_float(pos + 13),
-			"speed" = buf.decode_float(pos + 17),
-			"recovery" = buf.decode_float(pos + 21),
-			"energy" = buf.decode_float(pos + 25),
-		}
-		pos += 29
+		available_races[race_name].points = buf.decode_u8(pos)
+		pos += 1
+		var set_stats = func(buf, pos):
+			return {
+				"strength" = buf.decode_float(pos),
+				"durability" = buf.decode_float(pos + 4),
+				"force" = buf.decode_float(pos + 8),
+				"resistance" = buf.decode_float(pos + 12),
+				"speed" = buf.decode_float(pos + 16),
+				"recovery" = buf.decode_float(pos + 20),
+				"energy" = buf.decode_float(pos + 24),
+			}
+		available_races[race_name].stats = set_stats.call(buf, pos)
+		pos += 28
+		available_races[race_name].max_stats = set_stats.call(buf, pos)
+		pos += 28
 		if pos >= buf.size():
 			continue
 		size = buf[pos]
