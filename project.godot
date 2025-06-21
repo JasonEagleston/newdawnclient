@@ -13,6 +13,7 @@ config_version=5
 config/name="RoleplayGame"
 run/main_scene="uid://gisfouqmaovo"
 config/features=PackedStringArray("4.4", "GL Compatibility")
+run/max_fps=60
 config/icon="res://icon.svg"
 
 [display]
@@ -49,3 +50,7 @@ RIGHT={
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/default_filters/use_nearest_mipmap_filter=true
+textures/default_filters/anisotropic_filtering_level=0
+textures/decals/filter=0
+textures/light_projectors/filter=0
