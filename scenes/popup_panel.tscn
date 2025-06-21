@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://dxuvdopa7y6vi"]
+
+[ext_resource type="Script" uid="uid://b1g54bx0q1gql" path="res://scripts/popup_label.gd" id="1_5h2f2"]
+
+[node name="PopupPanel" type="PopupPanel"]
+size = Vector2i(31, 31)
+visible = true
+script = ExtResource("1_5h2f2")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 27.0
+offset_bottom = 27.0
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

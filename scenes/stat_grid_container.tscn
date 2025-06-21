@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dhlwgmj0wfpqs"]
+
+[node name="GridContainer" type="GridContainer"]
+anchors_preset = -1
+anchor_left = 0.4
+anchor_right = 0.4
+columns = 4
+
+[node name="strength" type="Label" parent="."]
+layout_mode = 2
+
+[node name="strength_mod" type="Label" parent="."]
+layout_mode = 2
+
+[node name="strength_up" type="Button" parent="."]
+layout_mode = 2
+
+[node name="strength_down" type="Button" parent="."]
+layout_mode = 2

@@ -1,0 +1,249 @@
+[gd_scene load_steps=2 format=3 uid="uid://dge8uqkssmwoj"]
+
+[ext_resource type="Script" uid="uid://bsayge6eqykid" path="res://scripts/creation_menu.gd" id="1_dh05p"]
+
+[node name="Window" type="Window"]
+title = "Character Creation"
+initial_position = 1
+size = Vector2i(480, 240)
+transient = true
+script = ExtResource("1_dh05p")
+
+[node name="RaceList" type="ItemList" parent="."]
+anchors_preset = -1
+anchor_right = 0.25
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+item_count = 2
+item_0/text = "Alien"
+item_1/text = "Human"
+
+[node name="VSeparator" type="VSeparator" parent="RaceList"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -4.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="RaceDescriptionPanel" type="Panel" parent="."]
+anchors_preset = -1
+anchor_left = 0.25
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="RaceDescriptionPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.05
+anchor_right = 0.95
+anchor_bottom = 0.8
+grow_horizontal = 2
+grow_vertical = 2
+text = "This is placeholder text for a race description. A basic idea of what the race is good and bad at, where they live, and physical characteristics."
+
+[node name="NextButton" type="Button" parent="RaceDescriptionPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -32.0
+offset_right = -16.0
+offset_bottom = -16.0
+grow_horizontal = 0
+grow_vertical = 0
+text = ">"
+
+[node name="StatPanel" type="Panel" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LineEdit" type="LineEdit" parent="StatPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.35
+placeholder_text = "Name"
+
+[node name="PlayerDisplay" type="ColorRect" parent="StatPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.15
+anchor_right = 0.35
+anchor_bottom = 1.0
+offset_bottom = -38.0
+color = Color(0.378933, 0.315497, 0.231823, 1)
+
+[node name="GridContainer" type="GridContainer" parent="StatPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4
+anchor_right = 0.4
+columns = 4
+
+[node name="strength" type="Label" parent="StatPanel/GridContainer"]
+layout_mode = 2
+text = "STRENGTH"
+
+[node name="strength_mod" type="Label" parent="StatPanel/GridContainer"]
+layout_mode = 2
+text = "1.0"
+
+[node name="strength_down" type="Button" parent="StatPanel/GridContainer"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+text = "-"
+
+[node name="strength_up" type="Button" parent="StatPanel/GridContainer"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+text = "+"
+
+[node name="durability" type="Label" parent="StatPanel/GridContainer"]
+layout_mode = 2
+text = "DURABILITY"
+
+[node name="durability_mod" type="Label" parent="StatPanel/GridContainer"]
+layout_mode = 2
+text = "1.0"
+
+[node name="durability_down" type="Button" parent="StatPanel/GridContainer"]
+layout_mode = 2
+text = "-"
+
+[node name="durability_up" type="Button" parent="StatPanel/GridContainer"]
+layout_mode = 2
+text = "+"
+
+[node name="force" type="Label" parent="StatPanel/GridContainer"]
+layout_mode = 2
+text = "FORCE"
+
+[node name="force_mod" type="Label" parent="StatPanel/GridContainer"]
+layout_mode = 2
+text = "FORCE"
+
+[node name="force_down" type="Button" parent="StatPanel/GridContainer"]
+layout_mode = 2
+text = "-"
+
+[node name="force_up" type="Button" parent="StatPanel/GridContainer"]
+layout_mode = 2
+text = "+"
+
+[node name="resistance" type="Label" parent="StatPanel/GridContainer"]
+layout_mode = 2
+text = "RESISTANCE"
+
+[node name="resistance_mod" type="Label" parent="StatPanel/GridContainer"]
+layout_mode = 2
+text = "RESISTANCE"
+
+[node name="resistance_down" type="Button" parent="StatPanel/GridContainer"]
+layout_mode = 2
+text = "-"
+
+[node name="resistance_up" type="Button" parent="StatPanel/GridContainer"]
+layout_mode = 2
+text = "+"
+
+[node name="speed" type="Label" parent="StatPanel/GridContainer"]
+layout_mode = 2
+text = "SPEED"
+
+[node name="speed_mod" type="Label" parent="StatPanel/GridContainer"]
+layout_mode = 2
+text = "SPEED"
+
+[node name="speed_down" type="Button" parent="StatPanel/GridContainer"]
+layout_mode = 2
+text = "-"
+
+[node name="speed_up" type="Button" parent="StatPanel/GridContainer"]
+layout_mode = 2
+text = "+"
+
+[node name="recovery" type="Label" parent="StatPanel/GridContainer"]
+layout_mode = 2
+text = "RECOVERY"
+
+[node name="recovery_mod" type="Label" parent="StatPanel/GridContainer"]
+layout_mode = 2
+text = "RECOVERY"
+
+[node name="recovery_down" type="Button" parent="StatPanel/GridContainer"]
+layout_mode = 2
+text = "-"
+
+[node name="recovery_up" type="Button" parent="StatPanel/GridContainer"]
+layout_mode = 2
+text = "+"
+
+[node name="energy" type="Label" parent="StatPanel/GridContainer"]
+layout_mode = 2
+text = "ENERGY"
+
+[node name="energy_mod" type="Label" parent="StatPanel/GridContainer"]
+layout_mode = 2
+text = "ENERGY"
+
+[node name="energy_down" type="Button" parent="StatPanel/GridContainer"]
+layout_mode = 2
+text = "-"
+
+[node name="energy_up" type="Button" parent="StatPanel/GridContainer"]
+layout_mode = 2
+text = "+"
+
+[node name="points_label" type="Label" parent="StatPanel"]
+layout_mode = 2
+offset_top = 210.0
+offset_right = 74.0
+offset_bottom = 233.0
+text = "Points      "
+
+[node name="points_remaining" type="Label" parent="StatPanel"]
+layout_mode = 2
+offset_left = 51.0
+offset_top = 210.0
+offset_right = 165.0
+offset_bottom = 233.0
+text = "09"
+
+[node name="finished" type="Button" parent="StatPanel"]
+layout_mode = 0
+offset_left = 79.0
+offset_top = 206.0
+offset_right = 105.0
+offset_bottom = 237.0
+text = "->"
+
+[connection signal="close_requested" from="." to="." method="_on_close_requested"]
+[connection signal="pressed" from="RaceDescriptionPanel/NextButton" to="." method="_on_next_button_pressed"]
+[connection signal="pressed" from="StatPanel/GridContainer/strength_down" to="." method="_on_strength_down_pressed"]
+[connection signal="pressed" from="StatPanel/GridContainer/strength_up" to="." method="_on_strength_up_pressed"]
+[connection signal="pressed" from="StatPanel/GridContainer/durability_down" to="." method="_on_durability_down_pressed"]
+[connection signal="pressed" from="StatPanel/GridContainer/durability_up" to="." method="_on_durability_up_pressed"]
+[connection signal="pressed" from="StatPanel/GridContainer/force_down" to="." method="_on_force_down_pressed"]
+[connection signal="pressed" from="StatPanel/GridContainer/force_up" to="." method="_on_force_up_pressed"]
+[connection signal="pressed" from="StatPanel/GridContainer/resistance_down" to="." method="_on_resistance_down_pressed"]
+[connection signal="pressed" from="StatPanel/GridContainer/resistance_up" to="." method="_on_resistance_up_pressed"]
+[connection signal="pressed" from="StatPanel/GridContainer/speed_down" to="." method="_on_speed_down_pressed"]
+[connection signal="pressed" from="StatPanel/GridContainer/speed_up" to="." method="_on_speed_up_pressed"]
+[connection signal="pressed" from="StatPanel/GridContainer/recovery_down" to="." method="_on_recovery_down_pressed"]
+[connection signal="pressed" from="StatPanel/GridContainer/recovery_up" to="." method="_on_recovery_up_pressed"]
+[connection signal="pressed" from="StatPanel/GridContainer/energy_down" to="." method="_on_energy_down_pressed"]
+[connection signal="pressed" from="StatPanel/GridContainer/energy_up" to="." method="_on_energy_up_pressed"]
+[connection signal="pressed" from="StatPanel/finished" to="." method="_on_finished_pressed"]

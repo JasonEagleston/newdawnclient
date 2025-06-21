@@ -1,0 +1,87 @@
+[gd_resource type="SpriteFrames" load_steps=10 format=3 uid="uid://361kc8tm17xf"]
+
+[ext_resource type="Texture2D" uid="uid://bqwu75vtb3ogl" path="res://atlas/noupload/white_male.png" id="1_3k7q2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j47w5"]
+atlas = ExtResource("1_3k7q2")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_soy81"]
+atlas = ExtResource("1_3k7q2")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_asuop"]
+atlas = ExtResource("1_3k7q2")
+region = Rect2(416, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y8jwm"]
+atlas = ExtResource("1_3k7q2")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fmuwi"]
+atlas = ExtResource("1_3k7q2")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s7j2j"]
+atlas = ExtResource("1_3k7q2")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xoew6"]
+atlas = ExtResource("1_3k7q2")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_46g1o"]
+atlas = ExtResource("1_3k7q2")
+region = Rect2(96, 0, 32, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j47w5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_soy81")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_asuop")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y8jwm")
+}],
+"loop": true,
+"name": &"move_north",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fmuwi")
+}],
+"loop": true,
+"name": &"stand_east",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s7j2j")
+}],
+"loop": true,
+"name": &"stand_north",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xoew6")
+}],
+"loop": true,
+"name": &"stand_south",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_46g1o")
+}],
+"loop": true,
+"name": &"stand_west",
+"speed": 5.0
+}]

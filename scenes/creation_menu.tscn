@@ -1,0 +1,179 @@
+[gd_scene load_steps=2 format=3 uid="uid://cynsev811qv88"]
+
+[ext_resource type="Script" uid="uid://bsayge6eqykid" path="res://scripts/creation_menu.gd" id="1_ul25e"]
+
+[node name="CreationMenu" type="Window"]
+initial_position = 1
+size = Vector2i(600, 200)
+script = ExtResource("1_ul25e")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NewLoadPanel" type="Panel" parent="Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LoadButton" type="Button" parent="Control/NewLoadPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.6
+anchor_right = 0.5
+anchor_bottom = 0.6
+offset_left = -21.5
+offset_top = -15.5
+offset_right = 21.5
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Load"
+
+[node name="NewButton" type="Button" parent="Control/NewLoadPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.4
+anchor_right = 0.5
+anchor_bottom = 0.4
+offset_left = -21.5
+offset_top = -15.5
+offset_right = 21.5
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "New"
+
+[node name="StatsPanel" type="Panel" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RaceList" type="ItemList" parent="Control/StatsPanel"]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 128.0
+grow_vertical = 2
+allow_search = false
+item_count = 2
+item_0/text = "Alien"
+item_1/text = "Human"
+
+[node name="LineEdit" type="LineEdit" parent="Control/StatsPanel"]
+layout_mode = 0
+offset_left = 132.0
+offset_top = 4.0
+offset_right = 253.0
+offset_bottom = 35.0
+placeholder_text = "Name"
+
+[node name="STR" type="LineEdit" parent="Control/StatsPanel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -34.2812
+offset_right = 45.7188
+offset_bottom = 31.0
+grow_horizontal = 2
+placeholder_text = "Strength"
+max_length = 4
+
+[node name="STR2" type="LineEdit" parent="Control/StatsPanel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -34.0
+offset_top = 31.0
+offset_right = 46.0
+offset_bottom = 62.0
+grow_horizontal = 2
+placeholder_text = "Force"
+max_length = 4
+
+[node name="STR3" type="LineEdit" parent="Control/StatsPanel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -34.0
+offset_top = 62.0
+offset_right = 46.0
+offset_bottom = 93.0
+grow_horizontal = 2
+placeholder_text = "Resistance"
+max_length = 4
+
+[node name="STR4" type="LineEdit" parent="Control/StatsPanel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -34.0
+offset_top = 93.0
+offset_right = 46.0
+offset_bottom = 124.0
+grow_horizontal = 2
+placeholder_text = "Durability"
+max_length = 4
+
+[node name="STR5" type="LineEdit" parent="Control/StatsPanel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -34.0
+offset_top = 124.0
+offset_right = 46.0
+offset_bottom = 155.0
+grow_horizontal = 2
+placeholder_text = "Speed"
+max_length = 4
+
+[node name="STR6" type="LineEdit" parent="Control/StatsPanel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -34.0
+offset_top = 155.0
+offset_right = 46.0
+offset_bottom = 186.0
+grow_horizontal = 2
+placeholder_text = "Recovery"
+max_length = 4
+
+[node name="TextEdit" type="TextEdit" parent="Control/StatsPanel"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -254.0
+offset_bottom = -14.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Control/StatsPanel"]
+layout_mode = 0
+offset_left = 132.0
+offset_top = 35.0
+offset_right = 172.0
+offset_bottom = 58.0
+text = "Stat Points: "

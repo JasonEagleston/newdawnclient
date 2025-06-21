@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c58h1i7uapqyy"]
+
+[ext_resource type="SpriteFrames" uid="uid://361kc8tm17xf" path="res://assets/white_male.tres" id="1_5hcnm"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+texture_filter = 1
+sprite_frames = ExtResource("1_5hcnm")
+animation = &"stand_south"
