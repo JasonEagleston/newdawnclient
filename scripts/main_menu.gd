@@ -4,6 +4,8 @@ extends Node2D
 
 var socket = WebSocketPeer.new()
 
+var self_id = 0
+
 var clients: Array = []
 var maps: Array = []
 
@@ -78,11 +80,10 @@ func load_maps(buf: PackedByteArray, pos: int):
 
 func get_races(buf: PackedByteArray):
 	# [RACE LIST LENGTH, STRING LENGTH, RACE NAME STRING, STR, DUR, FRC, SPD, RECV, REPEAT?]
-	var len = buf[1]
 	var available_races = {}
 	var size = buf[2]
 	var pos = 2
-	for i in len:
+	for i in buf[1]:
 		var race_name = get_string(buf, pos)
 		available_races[race_name] = {}
 		pos += size + 1
@@ -173,7 +174,8 @@ func _process(dt):
 		while socket.get_available_packet_count():
 			var data = socket.get_packet()
 			# TYPE, LENGTH, VALUE usually. Some packets are just TYPE, VALUE of known size.
-			var ptype: PacketType = data[0]
+			var ptype: PacketType = data[0] as PacketType
+			print(ptype)
 			if ptype == PacketType.LOGIN:
 				add_client(data)
 			elif ptype == PacketType.LOGOUT:
