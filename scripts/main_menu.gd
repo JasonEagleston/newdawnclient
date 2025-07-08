@@ -138,6 +138,9 @@ func send_creation_stats():
 func send_move_vec():
 	var data: PackedByteArray = [PacketType.CLIENT_MOVE_REQUEST, move_vec.x && 0xFF, move_vec.y && 0xFF]
 	socket.send(data)
+
+func created_character():
+	pass
 		
 var move_vec: Vector2i
 var old_move_vec: Vector2i
@@ -165,7 +168,7 @@ func _process(dt):
 
 	var sockstate = socket.get_ready_state()
 	if is_connecting:
-		print(sockstate)
+		print("SOCK STATE: ", sockstate)
 		if sockstate == WebSocketPeer.STATE_OPEN:
 			print("Connected!")
 			is_connecting = false
@@ -190,6 +193,10 @@ func _process(dt):
 				pass
 			elif ptype == PacketType.UPDATE_CLIENT_POSITION:
 				pass
+			elif ptype == PacketType.CREATION_STAT_SEND:
+				if data[1] == 0:
+					pass
+				created_character()
 	
 	if move_vec != old_move_vec:
 		send_move_vec()
